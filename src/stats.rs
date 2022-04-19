@@ -1,3 +1,7 @@
+//! That stats module contains stats loop
+//!
+//! # Some Header
+
 mod timer;
 
 use std::io::{self, Result, Stderr, Write};
@@ -57,6 +61,8 @@ fn output_process(stderr: &mut Stderr, bytes: usize, elapsed: String, rate: f64)
     let _ = stderr.flush();
 }
 
+/// The TimeOut add for `.as_time()` method to `u64`
+/// # Example
 trait TimeOut {
     fn as_time(&self) -> String;
 }
@@ -66,5 +72,21 @@ impl TimeOut for u64 {
         let (hour, left) = (*self / 3600, *self % 3600);
         let (minutes, seconds) = (left / 60, left % 60);
         format!("{}:{:02}:{:02}", hour, minutes, seconds)
+    }
+}
+
+#[cfg(test)]
+mod tests {
+
+    use super::TimeOut;
+
+    #[test]
+    fn as_time_format() {
+        let pair = vec![(5_u64, "0:00:05")];
+        let pair = vec![(60_u64, "0:01:00")];
+
+        for (input, output) in pair {
+            assert_eq!(input.as_time().as_str(), output);
+        }
     }
 }
