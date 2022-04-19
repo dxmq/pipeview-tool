@@ -63,6 +63,7 @@ fn output_process(stderr: &mut Stderr, bytes: usize, elapsed: String, rate: f64)
 
 /// The TimeOut add for `.as_time()` method to `u64`
 /// # Example
+///
 trait TimeOut {
     fn as_time(&self) -> String;
 }

@@ -1,8 +1,15 @@
 [package]
 name = "eminent-spoon"
-version = "0.1.0"
+version = "1.0.0"
+authors = ["raining <1697859639@qq.com>"]
 edition = "2021"
-
+description = "a pipeview tool"
+homepage= "https://github.com/dxmq/pipeview-tool"
+repository= "https://github.com/dxmq/pipeview-tool"
+readme= "READMD.md"
+keywords = ["pipeview"]
+categories = ["command-line-utilities"]
+license = "MIT OR Apache-2.0"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
